@@ -1,63 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-main{
+body{
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
+}
+
+section{
+    width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-areas:"uno uno dos dos"
-                        "tres tres cuatro cuatro"
-                        "tres tres cuatro cuatro"
-                        "cinco cinco seis seis";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    
+    
 }
 
-
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+article{
+        text-align: center;
+        align-content: center;
+        border: 2px solid black;
 }
 
-.uno{
-    grid-area: uno;
-    background-color: green;
+.uno, .dos{
+    background-color: #E3F2DC;
 }
 
-.dos{
-    grid-area: dos;
-    background-color: green;
-}
-
-.tres{
-    grid-area: tres;
-    background-color: yellow;
-}
-
-.cuatro{
-    grid-area: cuatro;
-    background-color: yellow;
+.tres, .cuatro{
+    background-color: #F2E2C4;
 }
 
 .cinco{
-    grid-area: cinco;
-    background-color: pink;
+    background-color: #F2CECE;
 }
 
 .seis{
+    background-color: #D0E5F2;
+}
+
+@media screen and (max-width: 500px) {
+    section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 2fr 1fr 1fr 1fr;
+        grid-template-areas:   "seis seis"
+                               "cinco cinco"
+                               "tres cuatro"
+                               "dos dos"
+                               "uno uno" ;
+    }
+.uno{
+    grid-area: uno;
+}
+.dos{
+    grid-area: dos;
+}
+.tres{
+    grid-area: tres;
+}
+.cuatro{
+    grid-area: cuatro;
+}
+.cinco{
+    grid-area: cinco;
+    background-color:#D0E5F2;
+}
+.seis{
     grid-area: seis;
-    background-color: blue;
+    background-color: #F2CECE;
 }
 
-@media screen and (width < 900px){ 
-    main{
-        display: grid;
-        grid-template-areas:"uno uno dos dos"
-                            "tres tres cuatro cuatro"
-                            "tres tres cuatro cuatro"
-                            "cinco cinco seis seis";
-    }
-}
-
-@media screen and (width < 400px){
-    main{
-        
-    }
 }
